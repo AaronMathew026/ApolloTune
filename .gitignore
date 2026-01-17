@@ -5,6 +5,13 @@ __pycache__/
 
 # C extensions
 *.so
+#Notebooks
+/.ipynb_checkpoints
+/radionotes/
+/ApolloTune.ipynb
+/notebook_checkpoints/
+/.notebook_checkpoints/
+/*.ipynb
 
 # Distribution / packaging
 .Python
