@@ -68,7 +68,7 @@ class ChatMessage(models.Model):
     Chat Messages sent by Tuners during a broadcast
     """
     broadcast = models.ForeignKey(Broadcast, on_delete=models.CASCADE, related_name='messages')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'profile__user_type': 'tuner'})
+    user = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'profile__user_type': 'tuner'},blank = True, null = True)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 

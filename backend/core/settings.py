@@ -63,11 +63,10 @@ CORS_ALLOW_ALL_ORIGINS = True ## ONLY FOR DEVELOPMENT PURPOSES, should be remove
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.permission.AllowAny', # For development purposes
+        'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.renderers.JSONRenderer', #For JSON responses
-        'rest_framework.renderers.BrowsableAPIRenderer',# For development purposes
+        'rest_framework.permissions.AllowAny',
     ],
 }
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
