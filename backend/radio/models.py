@@ -35,6 +35,12 @@ class Channel(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
     genre = models.CharField(max_length=50, blank=True, null=True)
+    frequency = models.DecimalField(
+        max_digits=4,
+        decimal_places=1,
+        unique=True,
+        help_text="Frequency (e.g., 101.1)"
+    )
     is_live = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

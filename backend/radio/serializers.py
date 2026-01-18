@@ -27,7 +27,7 @@ class ChannelSerializer(serializers.ModelSerializer):
     creator_username = serializers.CharField(source='creator.username', read_only=True) # Allows us to display the creator's username 
     class Meta:
         model = Channel
-        fields = ['id', 'creator', 'creator_username', 'name', 'description', 'genre', 'is_live', 'created_at']
+        fields = ['id', 'creator', 'creator_username', 'name', 'description', 'genre', 'frequency', 'is_live', 'created_at']
         read_only_fields = ['creator', 'created_at']
 
 class BroadcastSerializer(serializers.ModelSerializer):
