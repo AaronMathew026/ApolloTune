@@ -39,7 +39,7 @@ class Channel(models.Model):
         max_digits=4,
         decimal_places=1,
         unique=True,
-        help_text="Frequency (e.g., 101.1)"
+        help_text="Frequency in MHz (e.g., 101.1)"
     )
     is_live = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
