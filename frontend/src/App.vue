@@ -27,15 +27,27 @@
       
       <!-- Active Streamers Section -->
       <section class="w-full max-w-2xl">
-        <h2 class="text-xl font-semibold mb-4 text-center " hidden="true">Live Now</h2>
-        <div class="text-gray-500 text-center" hidden="true">No active streamers</div>
       </section>
     </main>
   </div>
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import RadioDial from './components/RadioDial.vue'
+
+onMounted(async () => { 
+  try {
+    const activeStreamers = []
+    const response = await fetch('http://localhost:8000/api/channels/live/')
+    activeStreamers.value = await response.json()
+    console.log('Active Streamers', activeStreamers.value)
+  
+  } catch (error) {
+    console.error('Error fetching active streamers:', error)
+  } 
+
+});
 </script>
 
 <style>
