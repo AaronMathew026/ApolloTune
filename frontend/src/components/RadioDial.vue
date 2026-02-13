@@ -5,7 +5,7 @@
         ref="dialWrapper"
         tabindex="0"
         @mousemove="handleMouseMove"
-        @keydown.enter="selectFrequency"
+        @click="selectFrequency"
     >
         <!-- Spinning wheel ring -->
         <div class="spinning-wheel" :style="{ transform: `rotate(${rotation}deg)` }">

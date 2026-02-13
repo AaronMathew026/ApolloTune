@@ -27,6 +27,7 @@
       
       <!-- Active Streamers Section -->
       <section class="w-full max-w-2xl">
+         <ActiveStreams :streamers="activeStreamers" />
       </section>
     </main>
   </div>
@@ -35,10 +36,12 @@
 <script setup>
 import { onMounted } from 'vue';
 import RadioDial from './components/RadioDial.vue'
+import {ref} from 'vue';
+import ActiveStreams from './components/ActiveStreams.vue'
+const activeStreamers = ref([])
 
 onMounted(async () => { 
   try {
-    const activeStreamers = []
     const response = await fetch('http://localhost:8000/api/channels/live/')
     activeStreamers.value = await response.json()
     console.log('Active Streamers', activeStreamers.value)
